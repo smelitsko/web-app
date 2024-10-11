@@ -1,5 +1,6 @@
 import streamlit as st
 import functions
+
 # para detener: ctrl +c en la terminal
 todos = functions.get_todos()
 
@@ -15,7 +16,7 @@ st.title("My todo app")
 st.subheader("This is my subheader")
 st.write("This software is to increase my productivity")
 
-for index,todo in enumerate(todos):
+for index, todo in enumerate(todos):
     checkbox = st.checkbox(todo, key=todo)
     if checkbox:
         todos.pop(index)
@@ -23,10 +24,4 @@ for index,todo in enumerate(todos):
         del st.session_state[todo]
         st.rerun()
 
-
-
-st.text_input(label="",placeholder="add a todo...", on_change=add_todo, key="new_todo")
-
-print("Hello")
-
-st.session_state
+st.text_input(label="", placeholder="add a todo...", on_change=add_todo, key="new_todo")
