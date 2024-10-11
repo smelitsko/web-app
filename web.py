@@ -29,4 +29,3 @@ st.text_input(label="",placeholder="add a todo...", on_change=add_todo, key="new
 
 print("Hello")
 
-st.session_state
